@@ -1,93 +1,17 @@
-//kylian's delivery service
-021-2.gat,28,124,0|script|Kylian|193,
-{
-if (QUEST_DELIVERY == 1) goto L_Second;
-
-if (QUEST_DELIVERY == 2) goto L_Third;
-    
-if (QUEST_DELIVERY == 3) goto L_Fourth;
-    
-if (QUEST_DELIVERY == 4) goto L_Fifth;
-    
-if (QUEST_DELIVERY == 5) goto L_Sixth;
-    
-if (QUEST_DELIVERY == 6) goto L_Seventh;
-    
-if (QUEST_DELIVERY == 7) goto L_Done;
-    
-    mes "[Kylian]";
-    mes "\"Hello there!\"";
-    mes "\"Welcome to Kylian's Delivery Service. Where the packages are always on time.\"";
-    mes "\"Don't I know you?\"";
-    next;
-    mes "\"Well doesn't matter either way really. I bet you are interested in making some money aren't you.\"";
-    mes "\"I have alot of deliveries to make and if you can spare the time I can spare the cash. So what do you say, are you in?\"";
-    menu
-        "Sure i'll help.",L_First,
-        "No way I'm a famous adventurer",L_Close,
-        "No thank you.",L_Close;
-L_First:
-    mes "[Kylian]";
-    mes"\"Your first delivery is to Nathan in the caves outside of town. It's just a letter but make sure you get your paper signed anyway.\"";
-    mes"\"Kylian gives you a letter and a sheet of paper with 7 signature lines on it.\"";
-    menu
-        "Okay I'm on my way.", next,
-        "I've changed my mind.", next;
-set QUEST_DELIVERY,1;
-goto L_Close;
-L_Second:
-    mes "\"Very good and you even got the paper signed. Here's your pay.\"";
-    set zeny, zeny + 2000;
-    mes "\"Your next assignment is to a wizard named Auldsbel. Here's the box and make sure you get him to sign the paper before he blows you up or transmutes you into a frog or something. By the way that money includes money for the ferry and your pay.\"";
-    goto L_Close;
-set QUEST_DELIVERY, 2;
-goto L_Close;
-L_Third:         
-    mes "\"Your next delivery is this box here. It needs to go to Dimond at Dimond's Cove\"";
-    mes "\"Make sure you get her to sign. Here's your pay and money for the ferry\"";
-    set zeny, zeny + 1500;
-    goto L_Close;
-set QUEST_DELIVERY, 3;       
-goto L_Close;
-L_Fourth:
-    mes "\"The next delivery is to a witch. Sagatha is her name is she's somewhere in the woods north of Hurnscald. I wouldn't suggest wearing any fur or leather around her and make sure she signs.\"";
-    set zeny, zeny + 1500;
-    mes "\"There's your money and some for the ferry. Be careful.\"";
-    goto L_Close;
-set QUEST_DELIVERY, 4;
-goto L_Close;
-L_Fifth:
-    mes "\"This next delivery is very dangerous so I am going to give you some extra money for an experienced adventurer to help. This basket of sweetrolls needs to go to the caretaker of the cemetary.\"";
-    set zeny, zeny + 2500;
-    mes "\"Don't go getting yourself killed. I don't pay funeral expenses.\"";
-    goto L_Close;
-    
-set QUEST_DELIVERY, 5;
-goto L_Close;
-L_Sixth:
-    mes "\"This next order goes to Nivalis. Dress warm and find Miler in the inn get him to sign for this letter and head back here before you freeze.\"";
-    set zeny, zeny + 1500;
-    mes "\"This is a fairly simple delivery shouldn't take you no time at all.\"";
-    goto L_Close;
-    
-set QUEST_DELIVERY, 6;
-goto L_Close;
-L_Seventh:
-    mes "\"This delivery I've saved for last because it is the most dangerous there's a man by the name of Connor up at the Blue sages library. You'll need to hire someone experienced and someone that knows their way around.\"";
-    set zeny, zeny + 2500;
-    mes "\" Don't get yourself killed by any yetis or anything on your way up and back. Don't forget to have him sign the sheet.\"";
-    goto L_Close;
-    
-set QUEST_DELIVERY, 7;
-goto L_Close;
-L_Done:
-    mes "\"Here you go your final payment for the deliveries today.\"";
-    set zeny, zeny + 1000;
-    mes "\"Thanks for all your help!\"";
-    goto L_Close;
-    
-L_Close:
-    close;
-
-
-    
+//kylian uses Nibble 6 of QUEST_NorthTulimshar
+//For his delivery service.
+//state 0 is for letter in hand for Nathan
+//state 1 is for when Nathan signs players sheet
+//state 2 is for Auldsbel letter in hand
+//state 3 is for Audsbel signing the players sheet
+//state 4 is for Dimonds letter
+//state 5 is for when Dimond signs the players sheet
+//state 6 is for Sagathas letter
+//state 7 is for when Sagatha signs players sheet
+//state 8 is for the caretakers letter
+//state 9 is for when the caretaker signs players sheet
+//state 10 is for when the player has Milers letter
+//state 11 is for when Miler has signed the players sheet
+//state 12 is for when the player has Connors letter
+//state 13 is for when Connor has signed the players sheet
+//state 14 is for when the quest is done
