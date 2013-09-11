@@ -20,9 +20,6 @@ if (QUEST_DELIVERY == 7) goto L_Done;
     mes "\"Welcome to Kylian's Delivery Service. Where the packages are always on time.\"";
     mes "\"Don't I know you?\"";
     next;
-    menu
-        "Yes you do I helped you when you first arrived.",
-        "No I've never met you before in my life.";
     mes "\"Well doesn't matter either way really. I bet you are interested in making some money aren't you.\"";
     mes "\"I have alot of deliveries to make and if you can spare the time I can spare the cash. So what do you say, are you in?\"";
     menu
@@ -34,40 +31,34 @@ L_First:
     mes"\"Your first delivery is to Nathan in the caves outside of town. It's just a letter but make sure you get your paper signed anyway.\"";
     mes"\"Kylian gives you a letter and a sheet of paper with 7 signature lines on it.\"";
     menu
-        "Okay I'm on my way.";
-        goto L_Close;
+        "Okay I'm on my way.", next,
+        "I've changed my mind.", next;
 set QUEST_DELIVERY,1;
 goto L_Close;
 L_Second:
     mes "\"Very good and you even got the paper signed. Here's your pay.\"";
-    get zeny, zeny + 2000;
+    set zeny, zeny + 2000;
     mes "\"Your next assignment is to a wizard named Auldsbel. Here's the box and make sure you get him to sign the paper before he blows you up or transmutes you into a frog or something. By the way that money includes money for the ferry and your pay.\"";
-    goto L_Close;
-    IF Paper signed then; set QUEST_DELIVERY, 2;
-    goto L_Close;
-    If Paper not signed; goto L_Notsigned;
-L_Notsigned:
-    mes "\"You forgot to have him sign the paper. You'll have to run back on your own money and get it signed. Go. Hurry.\"";
     goto L_Close;
 set QUEST_DELIVERY, 2;
 goto L_Close;
 L_Third:         
     mes "\"Your next delivery is this box here. It needs to go to Dimond at Dimond's Cove\"";
     mes "\"Make sure you get her to sign. Here's your pay and money for the ferry\"";
-    get zeny, zeny + 1500;
+    set zeny, zeny + 1500;
     goto L_Close;
 set QUEST_DELIVERY, 3;       
 goto L_Close;
 L_Fourth:
     mes "\"The next delivery is to a witch. Sagatha is her name is she's somewhere in the woods north of Hurnscald. I wouldn't suggest wearing any fur or leather around her and make sure she signs.\"";
-    get zeny, zeny + 1500;
+    set zeny, zeny + 1500;
     mes "\"There's your money and some for the ferry. Be careful.\"";
     goto L_Close;
 set QUEST_DELIVERY, 4;
 goto L_Close;
 L_Fifth:
     mes "\"This next delivery is very dangerous so I am going to give you some extra money for an experienced adventurer to help. This basket of sweetrolls needs to go to the caretaker of the cemetary.\"";
-    get zeny, zeny + 2500;
+    set zeny, zeny + 2500;
     mes "\"Don't go getting yourself killed. I don't pay funeral expenses.\"";
     goto L_Close;
     
@@ -75,7 +66,7 @@ set QUEST_DELIVERY, 5;
 goto L_Close;
 L_Sixth:
     mes "\"This next order goes to Nivalis. Dress warm and find Miler in the inn get him to sign for this letter and head back here before you freeze.\"";
-    get zeny, zeny + 1500;
+    set zeny, zeny + 1500;
     mes "\"This is a fairly simple delivery shouldn't take you no time at all.\"";
     goto L_Close;
     
@@ -83,7 +74,7 @@ set QUEST_DELIVERY, 6;
 goto L_Close;
 L_Seventh:
     mes "\"This delivery I've saved for last because it is the most dangerous there's a man by the name of Connor up at the Blue sages library. You'll need to hire someone experienced and someone that knows their way around.\"";
-    get zeny, zeny + 2500;
+    set zeny, zeny + 2500;
     mes "\" Don't get yourself killed by any yetis or anything on your way up and back. Don't forget to have him sign the sheet.\"";
     goto L_Close;
     
@@ -91,7 +82,7 @@ set QUEST_DELIVERY, 7;
 goto L_Close;
 L_Done:
     mes "\"Here you go your final payment for the deliveries today.\"";
-    get zeny, zeny + 1000;
+    set zeny, zeny + 1000;
     mes "\"Thanks for all your help!\"";
     goto L_Close;
     
