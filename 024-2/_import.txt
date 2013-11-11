@@ -1,0 +1,16 @@
+// Map 024-2: Tulimshar Magic School
+// This file is generated automatically. All manually changes will be removed when running the Converter.
+map: 024-2.gat
+npc: npc/024-2/_mobs.txt
+npc: npc/024-2/_warps.txt
+npc: npc/024-2/barrier.txt
+npc: npc/024-2/tyer.txt
+npc: npc/024-2/tyer_trigger.txt
+npc: npc/024-2/astrid.txt
+npc: npc/024-2/culvare.txt
+npc: npc/024-2/ansar.txt
+npc: npc/024-2/willit.txt
+npc: npc/024-2/vilarka.txt
+npc: npc/024-2/sillar.txt
+npc: npc/024-2/estirk.txt
+npc: npc/024-2/reverla.txt
